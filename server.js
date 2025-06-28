@@ -14,7 +14,7 @@ const app = express();
 
 // ✅ Enable CORS for frontend (React app)
 app.use(cors({
-  origin: "http://localhost:5173", // your frontend URL
+  origin: "https://course-hub-fawn.vercel.app/", // your frontend URL
   credentials: true // required if using cookies or auth headers
 }));
 
