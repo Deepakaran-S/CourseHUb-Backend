@@ -13,10 +13,13 @@ dotenv.config();
 const app = express();
 
 // ✅ Enable CORS for frontend (React app)
-app.use(cors({
-  origin: "https://course-hub-fawn.vercel.app/", // your frontend URL
-  credentials: true // required if using cookies or auth headers
-}));
+app.use(
+  cors({
+    origin: "*",
+    allowedHeaders: ["Authorization", "Content-Type"],
+    exposedHeaders: ["Authorization"],
+  })
+);
 
 // ✅ Parse incoming JSON
 app.use(express.json());
